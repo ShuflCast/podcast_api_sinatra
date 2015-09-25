@@ -6,7 +6,7 @@ class PodcastApi < Sinatra::Base
 
   client = Audiosearch::Client.new(
   :id     => ENV['OAUTH_ID'],
-  :secret => ENgitV['OAUTH_SECRET'],
+  :secret => ENV['OAUTH_SECRET'],
   :host   => 'https://www.audiosear.ch/',
   :debug  => false,
 )
