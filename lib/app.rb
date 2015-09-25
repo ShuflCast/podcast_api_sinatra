@@ -15,9 +15,7 @@ class PodcastApi < Sinatra::Base
     if !res.is_success
       raise "There was a problem searching: #{res.status} #{res}"
     end
-    res.results.each do |episode|
-      printf("[%s] %s (%s)\n", episode.id, episode.title, episode.show_title)
-    end
+    res.results
   end
 
   # start the server if ruby file executed directly
