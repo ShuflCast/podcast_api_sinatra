@@ -12,7 +12,7 @@ class PodcastApi < Sinatra::Base
 )
 
   get '/search' do
-    res = client.get('/episodes/5678')
+  res = client.get('/search/episodes/*?'+ params[:search_term] +'&size=100&from=0')
     if !res.is_success
       raise "There was a problem searching: #{res.status} #{res}"
     end
