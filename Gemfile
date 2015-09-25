@@ -5,3 +5,5 @@ gem 'sinatra'
 gem 'rspec-sinatra'
 
 gem 'audiosearch'
+
+gem 'json'

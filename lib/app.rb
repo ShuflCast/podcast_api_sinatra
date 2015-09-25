@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative 'logic'
+require 'json'
 
 class PodcastApi < Sinatra::Base
 
@@ -15,7 +16,7 @@ class PodcastApi < Sinatra::Base
     if !res.is_success
       raise "There was a problem searching: #{res.status} #{res}"
     end
-    res.results
+    res.results.to_json
   end
 
   # start the server if ruby file executed directly
