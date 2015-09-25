@@ -6,13 +6,13 @@ class PodcastApi < Sinatra::Base
 
   client = Audiosearch::Client.new(
   :id     => ENV['OAUTH_ID'],
-  :secret => ENV['OAUTH_SECRET'],
+  :secret => ENgitV['OAUTH_SECRET'],
   :host   => 'https://www.audiosear.ch/',
   :debug  => false,
 )
 
   get '/search' do
-    res = client.search({ q: 'story', size: 400, from: 0 })
+    res = client.get('/episodes/5678')
     if !res.is_success
       raise "There was a problem searching: #{res.status} #{res}"
     end
