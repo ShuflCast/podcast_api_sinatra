@@ -7,3 +7,5 @@ gem 'rspec-sinatra'
 gem 'audiosearch'
 
 gem 'json'
+
+gem 'rack-cors', :require => 'rack/cors'
