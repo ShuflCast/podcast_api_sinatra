@@ -9,6 +9,8 @@ require 'sinatra/cross_origin'
 
 class PodcastApi < Sinatra::Base
 
+    register Sinatra::CrossOrigin
+
     configure do
       enable :cross_origin
     end
