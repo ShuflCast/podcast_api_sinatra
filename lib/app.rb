@@ -5,6 +5,15 @@ require 'json'
 
 class PodcastApi < Sinatra::Base
 
+    options "*" do
+    response.headers["Allow"] = "HEAD,GET,PUT,DELETE,OPTIONS"
+
+    # Needed for AngularJS
+    response.headers["Access-Control-Allow-Headers"] = "X-Requested-With, X-HTTP-Method-Override, Content-Type, Cache-Control, Accept"
+
+    halt HTTP_STATUS_OK
+  end
+
   client = Audiosearch::Client.new(
   :id     => ENV['OAUTH_ID'],
   :secret => ENV['OAUTH_SECRET'],
