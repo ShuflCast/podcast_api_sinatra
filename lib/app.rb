@@ -1,9 +1,17 @@
 require 'sinatra/base'
 require_relative 'logic'
 require 'json'
+require 'sinatra/cross_origin'
+
+
+
 
 
 class PodcastApi < Sinatra::Base
+
+    configure do
+      enable :cross_origin
+    end
 
     options "*" do
     response.headers["Allow"] = "HEAD,GET,PUT,DELETE,OPTIONS"
